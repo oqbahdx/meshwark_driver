@@ -1,0 +1,233 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meshwark_driver/presentation/bloc/select_service_bloc/select_service_cubit.dart';
+import 'package:meshwark_driver/presentation/resources/assets_manager.dart';
+import 'package:meshwark_driver/presentation/resources/color_manager.dart';
+import 'package:meshwark_driver/presentation/resources/fonts_manager.dart';
+import 'package:meshwark_driver/presentation/resources/routes_manager.dart';
+import 'package:meshwark_driver/presentation/resources/style_manager.dart';
+
+import '../../app/app_prefs.dart';
+import '../../app/constant.dart';
+import '../../app/di.dart';
+import '../map/widgets/map_view_widgets.dart';
+import '../resources/strings_manager.dart';
+import '../resources/language_manager.dart';
+import '../resources/value_manager.dart';
+
+class SelectServiceView extends StatefulWidget {
+  const SelectServiceView({super.key});
+
+  @override
+  State<SelectServiceView> createState() => _SelectServiceViewState();
+}
+
+class _SelectServiceViewState extends State<SelectServiceView> {
+  final AppPreferences _appPreferences = instance<AppPreferences>();
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeUserPreferences();
+    context.read<SelectServiceCubit>().fToast.init(context);
+    context.read<SelectServiceCubit>().getUser();
+
+    if (kDebugMode) {
+      print("user id from select service view : ${Constants.id}");
+    }
+  }
+
+  Future<void> _initializeUserPreferences() async {
+    Constants.id = await _appPreferences.getUserId(key: 'userId') ?? "";
+    Constants.token = await _appPreferences.getToken(key: 'token') ?? "";
+    Constants.firstName =
+        await _appPreferences.getFirstName(key: 'firstName') ?? "";
+    Constants.lastName =
+        await _appPreferences.getLastName(key: 'lastName') ?? "";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).height;
+    final width = MediaQuery.sizeOf(context).width;
+    final cubit = context.read<SelectServiceCubit>();
+
+    return BlocConsumer<SelectServiceCubit, SelectServiceState>(
+      listener: (context, state) {
+        if (cubit.userModel?.hasProfile == false) {
+          Navigator.of(context)
+              .pushReplacementNamed(Routes.driverInformationRegistrationRoute);
+        } else if (cubit.userModel?.isApproved == false) {
+          // todo : fix it later and make it isApproved == false
+          Navigator.of(context).pushReplacementNamed(Routes.reviewAccountRoute);
+        }
+      },
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: ColorManager.white,
+          drawer:  DrawerList(),
+          appBar: _buildAppBar(context),
+          body: _buildBody(context, cubit, height, width),
+        );
+      },
+    );
+  }
+
+  AppBar _buildAppBar(BuildContext context) {
+    return AppBar(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: ColorManager.white,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      backgroundColor: ColorManager.transparent,
+      elevation: 0.0,
+      title: Text(
+        AppStrings.selectService.tr(),
+        style: getBoldStyle(
+          color: ColorManager.primary,
+          fontSize: isRTL() ? FontSize.s22.sp : FontSize.s20.sp,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBody(BuildContext context, SelectServiceCubit cubit,
+      double height, double width) {
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _buildServiceCard(
+            height: height,
+            width: width,
+            imagePath: ImageAssets.carSelect,
+            serviceName: AppStrings.cityToCity.tr(),
+            onTap: () {
+              cubit.setCarTrue();
+              Navigator.of(context).pushNamed(Routes.cityToCityMapRoute);
+            },
+            imageTag: ImageAssets.car,
+          ),
+          _buildServiceCard(
+            height: height,
+            width: width,
+            imagePath: ImageAssets.truckSelect,
+            serviceName: AppStrings.carCarrier.tr(),
+            onTap: () {
+              // cubit.setTruckTrue();
+              // cubit.service = "move_car";
+              // Navigator.of(context).pushNamed(Routes.carCarrierMapRoute);
+            cubit.showWarringMessage(message: AppStrings.soon.tr());
+            },
+            imageTag: 'sd',
+          ),
+          _buildServiceCard(
+            height: height,
+            width: width,
+            imagePath: ImageAssets.vanSelect,
+            serviceName: AppStrings.moveFurniture.tr(),
+            onTap: () {
+             // cubit.setVanTrue();
+             // Navigator.of(context).pushNamed(Routes.moveFurnitureMapViewRoute);
+              cubit.showWarringMessage(message: AppStrings.soon.tr());
+            },
+            imageTag: ImageAssets.van,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildServiceCard({
+    required double height,
+    required double width,
+    required String imagePath,
+    required String serviceName,
+    required Function() onTap,
+    required String imageTag,
+  }) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: height * 0.04,
+        left: width * 0.1, // Reduced padding for better responsiveness
+        right: width * 0.1,
+      ),
+      child: InkWell(
+        splashColor: Colors.transparent,
+        onTap: onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeInOut,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            boxShadow:
+                [
+              BoxShadow(
+                color: ColorManager.primary.withOpacity(0.3),
+                blurRadius: 20,
+                spreadRadius: 2,
+                offset: const Offset(0, 10),
+              ),
+            ]
+                ,
+          ),
+          child: Card(
+            elevation: 0, // Elevation is removed in favor of custom shadow
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Container(
+              height: width * 0.45,
+              width: width * 0.6,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors:
+                      [ColorManager.primary.withOpacity(0.2), ColorManager.primary.withOpacity(0.1)]
+                     ,
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color:  ColorManager.primary ,
+                  width: AppSize.s2,
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Hero(
+                    tag: imageTag,
+                    child: Image.asset(
+                      imagePath,
+                      height: width * 0.25, // Adjusted image size
+                      color: ColorManager.primary ,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    serviceName,
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: ColorManager.primary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  bool isRTL() {
+    return context.locale == ARABIC_LOCALE;
+  }
+}

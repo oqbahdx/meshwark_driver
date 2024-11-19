@@ -1,0 +1,184 @@
+name: meshwark_driver
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  intro_views_flutter: ^3.2.0
+  lottie: ^3.0.0
+  flutter_svg: ^2.0.9
+  retrofit: ^4.0.3
+  analyzer: ^6.2.0
+  dio: ^5.4.0
+  json_serializable: ^6.1.4
+  dartz: ^0.10.1
+#  internet_connection_checker: ^2.0.0
+  pretty_dio_logger: ^1.1.1
+  shared_preferences: ^2.0.13
+  freezed: ^2.0.4
+  get_it: ^7.2.0
+  json_annotation: ^4.5.0
+  fluttertoast: ^8.0.9
+  google_maps_flutter: ^2.5.3
+  geolocator: ^12.0.0
+  permission_handler: ^11.0.1
+  pin_code_fields: ^8.0.1
+  material_floating_search_bar: ^0.3.7
+  timelines: ^0.1.0
+  introduction_screen: ^3.0.2
+  flutter_launcher_icons: ^0.13.1
+  flutter_bloc: ^8.0.1
+  font_awesome_flutter: ^10.7.0
+  rxdart: ^0.27.5
+  easy_localization: ^3.0.1
+  flutter_phoenix: ^1.0.0
+  responsive_framework: ^1.1.1
+  image_picker: ^1.0.7
+  url_launcher: ^6.3.0
+  firebase_auth: ^5.2.0
+  firebase_core: ^3.4.0
+  location: ^6.0.2
+  flutter_local_notifications: ^17.2.2
+  connectivity_plus: ^6.0.5
+  shimmer_animation: ^2.1.0+1
+  flutter_rating_bar: ^4.0.1
+  cached_network_image: ^3.2.3
+  flutter_screenutil: ^5.9.0
+  package_info_plus: ^8.0.1
+  flutter_native_splash: ^2.3.10
+  signalr_netcore: ^1.3.7
+  firebase_messaging: ^15.1.0
+  logging: ^1.2.0
+  flutter_polyline_points: ^2.1.0
+  intl: ^0.19.0
+  vibration: ^2.0.0
+  audioplayers: ^6.0.0
+  change_app_package_name: ^1.4.0
+  myfatoorah_flutter: ^3.1.5
+
+dev_dependencies:
+  retrofit_generator: ^8.0.6
+  build_runner: ^2.4.7
+  flutter_test:
+      sdk: flutter
+  flutter_lints: ^4.0.0
+flutter_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/icons/appLogoSplash.png"
+
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/splash.png
+    - assets/images/language.svg
+    - assets/images/language.svg
+    - assets/images/appLogo.png
+    - assets/images/Profile.svg
+    - assets/images/bell.svg
+    - assets/images/language.svg
+    - assets/images/balance.svg
+    - assets/images/whatsapp.svg
+    - assets/images/about.svg
+    - assets/images/history.svg
+    - assets/images/support.svg
+    - assets/images/manProfile.png
+    - assets/images/loadingGif.gif
+    - assets/images/car_marker.png
+    - assets/images/move_car.png
+    - assets/images/carCarrier.png
+    - assets/images/man.png
+    - assets/images/car.png
+    - assets/images/van.png
+    - assets/images/truck.png
+    - assets/images/woman.png
+    - assets/jsons/empty.json
+    - assets/jsons/resetPassword.json
+    - assets/jsons/mapLoading.json
+    - assets/jsons/error.json
+    - assets/jsons/history.json
+    - assets/jsons/internet.json
+    - assets/jsons/review.json
+    - assets/jsons/loading.json
+    - assets/jsons/lookingForCar.json
+    - assets/jsons/noInternet.json
+    - assets/jsons/notification.json
+    - assets/jsons/profile.json
+    - assets/translation/ar-SA.json
+    - assets/translation/en-US.json
+    - assets/images/car_select.png
+    - assets/images/truck2_select.png
+    - assets/images/van_select.png
+    - assets/images/whatsApp.png
+    - assets/images/getStarted.jpeg
+    - assets/icons/appLogoSplash.png
+    - assets/ca/lets-encrypt-r3.pem
+    - assets/sounds/requestAlert.wav
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+flutter_native_splash:
+  color: "#ffffff"
+  image: "assets/icons/appLogoSplash.png"
+  android_12:
+    color: "#ffffff"
+    image: "assets/icons/appLogoSplash.png"
