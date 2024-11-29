@@ -1,22 +1,58 @@
-Meshwark Driver
-A Flutter application designed for drivers to travel between cities efficiently.
+# Meshwark Driver 🚗
 
-Features
-Accept trip requests.
-View trip details and status.
-Notifications for trip updates.
-Wallet integration for transaction history and balance management.
-Multi-language support.
-Getting Started
-This project is a starting point for a Flutter application.
-To get started with Flutter development, check out these resources:
+## Overview
+Meshwark Driver is a Flutter-based mobile application designed for drivers, providing a comprehensive platform for managing rides and transportation services.
 
-Lab: Write your first Flutter app
-Cookbook: Useful Flutter samples
-For detailed guidance, visit the online Flutter documentation.
+## Features
+- User authentication
+- Driver profile management
+- Ride tracking and management
+- Account verification process
+- Intuitive user interface
 
-Screenshots
-App Previews
-<div align="center"> <img src="https://github.com/user-attachments/assets/ca29fb28-82e4-4c44-ad3c-61830e2d229f" alt="Screenshot 1" width="30%" /> <img src="https://github.com/user-attachments/assets/1a82b920-b551-4da0-8a80-a40d532d8837" alt="Screenshot 2" width="30%" /> <img src="https://github.com/user-attachments/assets/ee287785-a920-4143-968f-0a364df4b18d" alt="Screenshot 3" width="30%" /> </div> <div align="center"> <img src="https://github.com/user-attachments/assets/b91a4692-626d-45b4-89b6-207c57f73570" alt="Screenshot 4" width="30%" /> <img src="https://github.com/user-attachments/assets/7ab3e674-b8f9-406d-887f-7fbbb9e6fcfe" alt="Screenshot 5" width="30%" /> <img src="https://github.com/user-attachments/assets/f5d52eed-16d1-45c7-beb0-35fbbe1dc6c3" alt="Screenshot 6" width="30%" /> </div> <div align="center"> <img src="https://github.com/user-attachments/assets/cb6546fa-1aa4-4452-985f-ea22f7c4a007" alt="Screenshot 7" width="30%" /> <img src="https://github.com/user-attachments/assets/87d19119-1724-45a2-aebd-9d9ab8d3153f" alt="Screenshot 8" width="30%" /> <img src="https://github.com/user-attachments/assets/9474ef52-d6d4-4072-9478-48e4965078d0" alt="Screenshot 9" width="30%" /> </div> <div align="center"> <img src="https://github.com/user-attachments/assets/829dc96d-559b-400f-bb84-a86b698105d7" alt="Screenshot 10" width="30%" /> <img src="https://github.com/user-attachments/assets/a2cb3cec-aa92-4d42-896f-0f466f828dc2" alt="Screenshot 11" width="30%" /> <img src="https://github.com/user-attachments/assets/72f6332d-7797-4779-8f3e-a04c8b7dcb71" alt="Screenshot 12" width="30%" /> </div>
-Documentation
-For further details, refer to the online documentation, which includes tutorials, sample projects, guidance on mobile development, and a full API reference.
+## Screenshots
+
+### Authentication & Profile
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ca29fb28-82e4-4c44-ad3c-61830e2d229f" width="250" />
+  <img src="https://github.com/user-attachments/assets/1a82b920-b551-4da0-8a80-a40d532d8837" width="250" />
+  <img src="https://github.com/user-attachments/assets/ee287785-a920-4143-968f-0a364df4b18d" width="250" />
+</p>
+
+### App Interfaces
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b91a4692-626d-45b4-89b6-207c57f73570" width="250" />
+  <img src="https://github.com/user-attachments/assets/7ab3e674-b8f9-406d-887f-7fbbb9e6fcfe" width="250" />
+  <img src="https://github.com/user-attachments/assets/f5d52eed-16d1-45c7-b070-35fbbe1dc6c3" width="250" />
+</p>
+
+## Getting Started
+
+### Prerequisites
+- Flutter SDK
+- Android Studio or VS Code
+- Dart SDK
+
+### Installation
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/meshwark_driver.git
+   ```
+2. Install dependencies
+   ```
+   flutter pub get
+   ```
+3. Run the app
+   ```
+   flutter run
+   ```
+
+## Development Resources
+- [Flutter Documentation](https://docs.flutter.dev)
+- [Dart Programming Guide](https://dart.dev/guides)
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+This project is open-source. Specify your license here.
