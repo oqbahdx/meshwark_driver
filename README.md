@@ -12,12 +12,8 @@ Meshwark Driver is a Flutter-based mobile application for drivers, providing com
 
 ## Screenshots
 
-### Authentication & Profile
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ca29fb28-82e4-4c44-ad3c-61830e2d229f" width="250" />
-  <img src="https://github.com/user-attachments/assets/1a82b920-b551-4da0-8a80-a40d532d8837" width="250" />
-  <img src="https://github.com/user-attachments/assets/ee287785-a920-4143-968f-0a364df4b18d" width="250" />
-</p>
+
+
 
 ### App Interfaces
 <p align="center">
@@ -60,6 +56,12 @@ Meshwark Driver is a Flutter-based mobile application for drivers, providing com
   <img src="https://github.com/user-attachments/assets/9157cb98-be04-4e3d-b92c-e535d3ad0382" width="250" />
   <img src="https://github.com/user-attachments/assets/61b3a1f7-3850-482c-bb00-572a4ffa3ab2" width="250" />
   <img src="https://github.com/user-attachments/assets/66cf6fbb-df76-4f6a-8713-a489b73467a2" width="250" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ca29fb28-82e4-4c44-ad3c-61830e2d229f" width="250" />
+  <img src="https://github.com/user-attachments/assets/1a82b920-b551-4da0-8a80-a40d532d8837" width="250" />
+  <img src="https://github.com/user-attachments/assets/ee287785-a920-4143-968f-0a364df4b18d" width="250" />
 </p>
 
 <p align="center">
