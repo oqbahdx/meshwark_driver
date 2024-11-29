@@ -53,7 +53,6 @@ Meshwark Driver is a Flutter-based mobile application for drivers, providing com
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9157cb98-be04-4e3d-b92c-e535d3ad0382" width="250" />
   <img src="https://github.com/user-attachments/assets/61b3a1f7-3850-482c-bb00-572a4ffa3ab2" width="250" />
   <img src="https://github.com/user-attachments/assets/66cf6fbb-df76-4f6a-8713-a489b73467a2" width="250" />
 </p>
